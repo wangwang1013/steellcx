@@ -1,5 +1,12 @@
 \# TODO.md
 
+## Sprint 2 Update — 2026-08-09
+
+- Home V2 has been rebuilt from the approved V0.5 demo, preserving its approved layout, copy, photographic direction, and CTA structure.
+- Approved embedded demo photography has been extracted into optimized production WebP assets; responsive behavior, accessible navigation, and basic Home SEO are in place.
+- Sprint 2 remains **In Progress** pending manual visual review, official logo/contact details, and final production copy approval.
+- Products V2 has been implemented from the approved V0.3 demo and remains pending manual visual review.
+
 
 
 Version: V2.0

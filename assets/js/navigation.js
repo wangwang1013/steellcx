@@ -1,1 +1,1 @@
-// Navigation enhancements are defined here.
+// The approved V0.5 Home navigation requires no JavaScript.

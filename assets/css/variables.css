@@ -1,1 +1,1 @@
-/* Design tokens are defined here. */
+:root { --ink: #171311; --ink-2: #241d19; --gold: #c6a165; --gold-light: #e0c28d; --paper: #f5f2ed; --line: rgba(25, 18, 13, .12); --muted: #716a64; --content-width: 1400px; }

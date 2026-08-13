@@ -1,1 +1,22 @@
-/* About page styles are defined here. */
+.about-page { background: #f5f3ef; color: #222; font-family: Arial, "Microsoft YaHei", sans-serif; }
+.about-header { position: fixed; z-index: 50; top: 0; right: 0; left: 0; display: flex; height: 78px; align-items: center; justify-content: space-between; padding: 0 70px; background: rgba(20, 15, 12, .9); }
+.about-header .logo { color: #d8bc84; font-size: 28px; font-weight: 700; letter-spacing: 8px; }
+.about-nav { display: flex; gap: 28px; }
+.about-nav a { color: #fff; font-size: 15px; }
+.about-nav a.active { color: #d8bc84; }
+.about-hero { position: relative; display: flex; height: 88vh; align-items: center; overflow: hidden; padding: 0 7%; color: #fff; }
+.about-hero > img { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: center; }
+.about-hero__overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 8, 7, .72), rgba(10, 8, 7, .28), rgba(10, 8, 7, .05)); }
+.about-hero__content { position: relative; max-width: 650px; }
+.about-hero__label { margin-bottom: 18px; color: #d8bc84; font-weight: 700; letter-spacing: 3px; }
+.about-hero h1 { margin-bottom: 24px; font-size: 72px; letter-spacing: normal; line-height: 1.05; }
+.about-hero__content > p:last-child { color: #ece7e1; font-size: 20px; line-height: 1.8; }
+.about-intro { padding: 90px 7%; text-align: center; }
+.about-intro h2 { font-size: 44px; }
+.about-intro > p { max-width: 820px; margin: 24px auto 0; color: #666; font-size: 16px; line-height: 1.8; }
+.about-cards { display: grid; gap: 1px; margin-top: 40px; background: #ddd; grid-template-columns: repeat(4, 1fr); }
+.about-card { padding: 30px; background: #fff; }
+.about-card h3 { margin: 10px 0; font-size: 18px; }
+.about-card p { color: #222; font-size: 16px; line-height: 1.5; }
+@media (max-width: 900px) { .about-cards { grid-template-columns: repeat(2, 1fr); }.about-hero h1 { font-size: 48px; } }
+@media (max-width: 620px) { .about-header { height: 70px; padding: 0 5%; }.about-nav { display: none; }.about-header .logo { font-size: 26px; }.about-hero { min-height: 560px; padding: 0 6%; }.about-hero h1 { font-size: 48px; }.about-hero__content > p:last-child { font-size: 18px; }.about-intro { padding: 74px 6%; }.about-intro h2 { font-size: 36px; }.about-cards { grid-template-columns: 1fr; } }
