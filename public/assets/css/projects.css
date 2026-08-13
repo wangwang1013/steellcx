@@ -1,0 +1,41 @@
+.projects-page { background: var(--paper); color: var(--ink); }
+.projects-page .site-header { position: sticky; height: 78px; padding: 0 4vw; background: #17110e; }
+.projects-page .logo { font-size: 28px; letter-spacing: 7px; }
+.projects-page .desktop-nav { gap: 28px; }
+.projects-page .desktop-nav a { font-size: 12px; letter-spacing: 1.2px; }
+.projects-page .desktop-nav a.active { color: var(--gold-light); }
+.projects-page .desktop-nav a::after { display: none; }
+.projects-page .eyebrow, .project-no { color: #a57d43; font-size: 11px; font-weight: 700; letter-spacing: 3px; }
+
+.projects-hero { display: flex; min-height: 64vh; align-items: flex-end; color: #fff; background: linear-gradient(90deg, rgba(18, 12, 9, .82), rgba(18, 12, 9, .28)), url("../images/projects/projects-hero.webp") center 52% / cover no-repeat; }
+.projects-hero__inner { width: min(1400px, 92vw); margin: auto; padding: 84px 0 60px; }
+.projects-hero h1 { margin: 14px 0 20px; font-size: clamp(50px, 7vw, 86px); letter-spacing: -3px; line-height: .98; }
+.projects-hero p { max-width: 720px; color: #e3dad4; line-height: 1.72; }
+.projects-hero .eyebrow { color: #a57d43; }
+
+.projects-section { width: min(1400px, 92vw); margin: auto; padding: 78px 0; }
+.projects-section__head { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 40px; }
+.projects-section__head h2 { font-size: clamp(36px, 4vw, 54px); letter-spacing: -1.8px; line-height: 1.04; }
+.projects-section__head > p { max-width: 520px; color: #746b64; line-height: 1.7; }
+.project-block { padding: 54px 0 64px; border-top: 1px solid #d9d2ca; }
+.project-block:first-of-type { padding-top: 0; border-top: 0; }
+.project-block__head { display: grid; gap: 70px; margin-bottom: 28px; grid-template-columns: 1fr 1fr; }
+.project-block h3 { margin-top: 8px; font-size: clamp(34px, 4vw, 48px); letter-spacing: -1.4px; line-height: 1.04; }
+.project-meta .status { margin-bottom: 10px; color: #9b7a51; font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; }
+.project-meta > p:nth-child(2) { color: #746b64; line-height: 1.7; }
+.scope { display: grid; gap: 14px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #d9d2ca; font-size: 13px; line-height: 1.6; grid-template-columns: 70px 1fr; }
+.scope span { color: #514942; }
+.project-gallery { display: grid; width: min(1160px, 100%); align-items: start; gap: 28px; margin: 0 auto; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.project-photo { display: flex; aspect-ratio: 4 / 3; align-items: center; justify-content: center; overflow: hidden; margin: 0; background: #ece8e2; }
+.project-photo img { width: 100%; height: 100%; object-fit: contain; }
+.projects-future { display: grid; width: min(1160px, 100%); gap: 50px; margin: 14px auto 0; padding: 44px; background: var(--ink); color: #fff; grid-template-columns: 1fr 1fr; }
+.projects-future h3 { font-size: 32px; }
+.projects-future p { color: #bbb2ab; line-height: 1.7; }
+.projects-cta { padding: 88px 5vw; background: #2b211b; color: #fff; text-align: center; }
+.projects-cta h2 { margin-bottom: 12px; font-size: clamp(40px, 5vw, 60px); }
+.projects-cta p:not(.eyebrow) { max-width: 680px; margin: auto; color: #d3c9c2; line-height: 1.7; }
+.projects-cta .eyebrow { margin-bottom: 14px; }
+.projects-footer { display: flex; justify-content: space-between; padding: 28px 4vw; background: #0d0a09; color: #958b84; font-size: 12px; }
+
+@media (max-width: 1000px) { .projects-section__head, .project-block__head, .projects-future { display: block; }.projects-section__head > p, .project-meta, .projects-future p { margin-top: 18px; }.project-gallery { width: 100%; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .projects-page .site-header { height: 68px; }.projects-page .desktop-nav { display: none; }.projects-hero { min-height: 60vh; }.projects-hero__inner { padding: 68px 0 50px; }.projects-section { padding: 58px 0; }.project-block { padding: 42px 0 50px; }.project-gallery { gap: 14px; grid-template-columns: 1fr; }.projects-future { padding: 32px; }.projects-footer { display: block; line-height: 1.8; } }
