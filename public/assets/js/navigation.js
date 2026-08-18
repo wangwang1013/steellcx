@@ -4,15 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!button || !menu) return;
 
-  const closeMenu = () => {
-    button.setAttribute("aria-expanded", "false");
-    menu.hidden = true;
+  const setMenuState = (isOpen) => {
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute("aria-label", isOpen ? "关闭导航菜单" : "打开导航菜单");
+    menu.hidden = !isOpen;
+    document.body.classList.toggle("mobile-menu-open", isOpen);
   };
 
+  const closeMenu = () => setMenuState(false);
+
   const toggleMenu = () => {
-    const isOpen = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!isOpen));
-    menu.hidden = isOpen;
+    setMenuState(button.getAttribute("aria-expanded") !== "true");
   };
 
   button.addEventListener("click", toggleMenu);
