@@ -22,7 +22,7 @@
 .product-copy a { display: inline-block; margin-top: 20px; color: #9b7540; font-size: 14px; font-weight: 700; }
 .product-copy a span { display: inline-block; transition: .2s; }
 .product-copy a:hover span { transform: translateX(4px); }
-.band { padding: 85px 3%; background: var(--ink); color: #fff; }
+.band { padding: 60px 3%; background: var(--ink); color: #fff; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255, 255, 255, .12); }
 .stat { padding: 42px 30px; background: var(--ink); }
 .stat strong { display: block; margin-bottom: 8px; color: var(--gold-light); font-size: 42px; }
@@ -32,7 +32,8 @@
 .why-card b { display: block; margin-bottom: 18px; color: var(--gold); font-size: 12px; letter-spacing: 3px; }
 .why-card h3 { margin-bottom: 10px; font-size: 22px; }
 .why-card p { color: var(--muted); line-height: 1.65; }
-.cta { position: relative; display: flex; min-height: 430px; align-items: center; justify-content: center; overflow: hidden; padding: 90px 7%; color: #fff; text-align: center; }
+.home-page #about { padding-block: 70px; }
+.cta { position: relative; display: flex; min-height: 330px; align-items: center; justify-content: center; overflow: hidden; padding: 60px 7%; color: #fff; text-align: center; }
 .cta__image, .cta__overlay { position: absolute; inset: 0; height: 100%; }
 .cta__image { object-fit: cover; }
 .cta__overlay { background: rgba(19, 14, 11, .86); }
@@ -42,3 +43,4 @@
 .reveal { opacity: 0; transform: translateY(18px); transition: .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 620px) { .home-page .site-header { padding: 0 24px 0 20px; } .home-page #about { padding-block: 52px; } .home-page .band { padding-block: 46px; } .home-page .cta { min-height: 300px; padding-block: 42px; } .home-footer { padding-top: 38px; } }
