@@ -150,6 +150,11 @@ footer{background:#0e0b0a;color:#aaa;padding:33px 7%;display:flex;justify-conten
   .pvd-grid{grid-template-columns:1fr}
   .timeline{grid-template-columns:1fr 1fr}
 }
+@media(max-width:769px){
+  .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .timeline div{min-height:92px;padding:15px 12px}
+  .timeline b{margin-bottom:6px}
+}
 @media(max-width:700px){
   .factory-page .site-header{height:70px;padding:0 5%}
   .logo{font-size:26px}
@@ -163,7 +168,7 @@ footer{background:#0e0b0a;color:#aaa;padding:33px 7%;display:flex;justify-conten
   .section-head{display:block}
   .section-head p{margin-top:16px}
   .design-copy{grid-template-columns:1fr}
-  .steps-inline,.video-grid,.photo-flow,.pack-grid,.timeline{grid-template-columns:1fr}
+  .steps-inline,.video-grid,.photo-flow,.pack-grid{grid-template-columns:1fr}
   .video-card video,.video-card figure{height:235px}
   .led-copy,.qc-copy{padding:30px}
   footer{display:block;line-height:2}
