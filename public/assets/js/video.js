@@ -13,20 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
     video.load();
   };
 
-  let activeVideo = null;
   const handleEntries = (entries) => {
     entries.forEach((entry) => {
       const video = entry.target;
 
       if (!entry.isIntersecting) {
         video.pause();
-        if (activeVideo === video) activeVideo = null;
         return;
       }
 
-      if (activeVideo && activeVideo !== video) activeVideo.pause();
-      activeVideo = video;
-      const playVideo = () => video.play().catch(() => {});
+      const playVideo = () => video.play()
+        .then(() => { delete video.dataset.playbackError; })
+        .catch(() => { video.dataset.playbackError = "true"; });
 
       if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
         playVideo();
