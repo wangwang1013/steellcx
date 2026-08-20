@@ -71,7 +71,8 @@ nav a.active,nav a:hover{color:var(--gold2)}
 
 .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .video-card{background:#211a16;border:1px solid rgba(255,255,255,.1);overflow:hidden}
-.video-card video{height:320px;object-fit:cover;background:#080706}
+.video-card video,.video-card figure{height:320px;overflow:hidden;background:#080706}
+.video-card video,.video-card figure img{height:100%;object-fit:cover}
 .video-copy{padding:21px}
 .video-copy span{color:var(--gold2);font-size:11px;letter-spacing:2px}
 .video-copy h3{font-size:23px;margin:8px 0}
@@ -162,7 +163,7 @@ footer{background:#0e0b0a;color:#aaa;padding:33px 7%;display:flex;justify-conten
   .section-head p{margin-top:16px}
   .design-copy{grid-template-columns:1fr}
   .steps-inline,.video-grid,.photo-flow,.pack-grid,.timeline{grid-template-columns:1fr}
-  .video-card video{height:235px}
+  .video-card video,.video-card figure{height:235px}
   .led-copy,.qc-copy{padding:30px}
   footer{display:block;line-height:2}
 }
