@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const videos = [...document.querySelectorAll("[data-factory-video]")];
-  const staticMedia = window.matchMedia("(max-width: 700px), (prefers-reduced-motion: reduce)");
-
-  if (!videos.length || staticMedia.matches) return;
+  if (!videos.length) return;
 
   const loadVideo = (video) => {
     if (video.dataset.loaded) return;
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(handleEntries, { threshold: 0.3 });
+    const observer = new IntersectionObserver(handleEntries, { rootMargin: "360px 0px", threshold: 0.01 });
     videos.forEach((video) => observer.observe(video));
     return;
   }
@@ -49,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkVisibleVideos = () => {
     handleEntries(videos.map((video) => {
       const rect = video.getBoundingClientRect();
-      return { target: video, isIntersecting: rect.top < window.innerHeight && rect.bottom > 0 };
+      return { target: video, isIntersecting: rect.top < window.innerHeight + 360 && rect.bottom > -200 };
     }));
   };
 
