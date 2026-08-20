@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("mobile-menu-open", isOpen);
   };
 
+  setMenuState(false);
+
   const closeMenu = () => setMenuState(false);
 
   const toggleMenu = () => {
