@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setMenuState = (isOpen) => {
     button.setAttribute("aria-expanded", String(isOpen));
-    button.setAttribute("aria-label", isOpen ? "关闭导航菜单" : "打开导航菜单");
+    button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
     menu.hidden = !isOpen;
     document.body.classList.toggle("mobile-menu-open", isOpen);
   };

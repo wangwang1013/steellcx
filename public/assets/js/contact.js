@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const status = document.querySelector("#form-status");
   const defaultButtonText = submitButton?.textContent;
   const messages = {
-    name: "请填写姓名。",
-    email: "请填写有效的邮箱地址。",
-    country: "请填写国家或地区。",
-    message: "请填写项目说明。"
+    name: "Please enter your name.",
+    email: "Please enter a valid email address.",
+    country: "Please enter your country or region.",
+    message: "Please enter your project details."
   };
 
   const setError = (field, message = "") => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const setSubmitting = (isSubmitting) => {
     if (!submitButton) return;
     submitButton.disabled = isSubmitting;
-    submitButton.textContent = isSubmitting ? "提交中..." : defaultButtonText;
+    submitButton.textContent = isSubmitting ? "Submitting..." : defaultButtonText;
   };
 
   requiredFields.forEach((field) => field.addEventListener("blur", () => validate(field)));
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!valid) {
       const firstInvalid = requiredFields.find((field) => field.getAttribute("aria-invalid") === "true");
       firstInvalid?.focus();
-      if (status) status.textContent = "请完成标记为必填的字段。";
+      if (status) status.textContent = "Please complete all required fields.";
       return;
     }
 
@@ -67,9 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       form.reset();
       requiredFields.forEach((field) => setError(field));
-      if (status) status.textContent = "资料已提交，我们通常会在 24 小时内回复您。";
+      if (status) status.textContent = "Your request has been submitted. We normally reply within 24 hours.";
     } catch {
-      if (status) status.textContent = "提交失败，请稍后重试，或通过 WhatsApp 联系我们。";
+      if (status) status.textContent = "Submission failed. Please try again later or contact us via WhatsApp.";
     } finally {
       setSubmitting(false);
     }
