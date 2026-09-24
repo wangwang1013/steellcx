@@ -37,3 +37,15 @@
 .real-gallery { padding: 22px; }
 .products-cta { padding: 64px 7% 50px; }
 @media (max-width: 620px) { .product-section { padding-block: 54px; row-gap: 28px; }.real-gallery { padding: 20px; }.products-cta { padding: 56px 6% 40px; } }
+
+/* Decorative screen category galleries are data-driven by screen-categories.js. */
+.screen-category-nav { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.screen-category-nav a { color: #625a54; font-size: 12px; font-weight: 700; letter-spacing: .4px; line-height: 1.45; }
+.screen-category-nav a:hover, .screen-category-nav a:focus-visible { color: #9b7540; }
+.screen-category + .screen-category { margin-top: 38px; padding-top: 34px; border-top: 1px solid var(--line); }
+.screen-category { scroll-margin-top: 145px; }
+.screen-category__title { margin-bottom: 18px; font-size: 22px; line-height: 1.2; }
+.screen-category__grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 320px)); justify-content: start; }
+.screen-category__grid figure { aspect-ratio: 4 / 3; }
+@media (max-width: 1000px) { .screen-category__grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); } }
+@media (max-width: 620px) { .screen-category-nav { gap: 8px 14px; margin-bottom: 24px; padding-bottom: 17px; }.screen-category + .screen-category { margin-top: 30px; padding-top: 28px; }.screen-category { scroll-margin-top: 90px; }.screen-category__title { margin-bottom: 15px; font-size: 20px; } }
