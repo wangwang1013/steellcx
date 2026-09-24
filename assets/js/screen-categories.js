@@ -10,6 +10,7 @@
       images: [
         { src: "../assets/images/products/screens/carved-aluminium/carved-aluminium-screen-01.webp", alt: "Carved aluminium decorative screen reference 1" },
         { src: "../assets/images/products/screens/carved-aluminium/carved-aluminium-screen-02.webp", alt: "Carved aluminium decorative screen reference 2" },
+        { src: "../assets/images/products/screens/carved-aluminium/carved-aluminium-screen-03.webp", alt: "Carved aluminium decorative screen reference 3" },
         { src: "../assets/images/products/screens/carved-aluminium/carved-aluminium-screen-04.webp", alt: "Carved aluminium decorative screen reference 4" },
         { src: "../assets/images/products/screens/carved-aluminium/carved-aluminium-screen-05.webp", alt: "Carved aluminium decorative screen reference 5" },
         { src: "../assets/images/products/screens/carved-aluminium/carved-aluminium-screen-06.webp", alt: "Carved aluminium decorative screen reference 6" },
@@ -115,6 +116,7 @@
       title: "Modern Screens",
       navLabel: "Modern",
       images: [
+        { src: "../assets/images/products/screens/modern/modern-screen-01.webp", alt: "Modern stainless steel decorative screen reference 1" },
         { src: "../assets/images/products/screens/modern/modern-screen-02.webp", alt: "Modern stainless steel decorative screen reference 2" },
         { src: "../assets/images/products/screens/modern/modern-screen-03.webp", alt: "Modern stainless steel decorative screen reference 3" },
         { src: "../assets/images/products/screens/modern/modern-screen-04.webp", alt: "Modern stainless steel decorative screen reference 4" },
