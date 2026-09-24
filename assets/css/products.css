@@ -38,14 +38,24 @@
 .products-cta { padding: 64px 7% 50px; }
 @media (max-width: 620px) { .product-section { padding-block: 54px; row-gap: 28px; }.real-gallery { padding: 20px; }.products-cta { padding: 56px 6% 40px; } }
 
-/* Decorative screen category galleries are data-driven by screen-categories.js. */
-.screen-category-nav { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-.screen-category-nav a { color: #625a54; font-size: 12px; font-weight: 700; letter-spacing: .4px; line-height: 1.45; }
-.screen-category-nav a:hover, .screen-category-nav a:focus-visible { color: #9b7540; }
-.screen-category + .screen-category { margin-top: 38px; padding-top: 34px; border-top: 1px solid var(--line); }
-.screen-category { scroll-margin-top: 145px; }
-.screen-category__title { margin-bottom: 18px; font-size: 22px; line-height: 1.2; }
-.screen-category__grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 320px)); justify-content: start; }
-.screen-category__grid figure { aspect-ratio: 4 / 3; }
-@media (max-width: 1000px) { .screen-category__grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); } }
-@media (max-width: 620px) { .screen-category-nav { gap: 8px 14px; margin-bottom: 24px; padding-bottom: 17px; }.screen-category + .screen-category { margin-top: 30px; padding-top: 28px; }.screen-category { scroll-margin-top: 90px; }.screen-category__title { margin-bottom: 15px; font-size: 20px; } }
+/* Decorative screen category entry cards and dedicated collection pages. */
+.screen-category-cards { display: grid; gap: 18px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.screen-category-card { display: flex; min-width: 0; flex-direction: column; border: 1px solid var(--line); background: #fff; }
+.screen-category-card__image { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--paper); }
+.screen-category-card__image img { width: 100%; height: 100%; object-fit: contain; transition: .35s; }
+.screen-category-card:hover .screen-category-card__image img { transform: none; }
+.screen-category-card__content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 20px; }
+.screen-category-card h3 { margin-bottom: 10px; font-size: 20px; line-height: 1.2; }
+.screen-category-card p { margin-bottom: 18px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.screen-category-card .btn-text { margin-top: auto; font-size: 13px; }
+.screen-collection-page { background: var(--paper); }
+.screen-collection-main { padding: 150px 7% 100px; }
+.screen-breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 34px; color: var(--muted); font-size: 13px; }
+.screen-breadcrumb a { color: inherit; }.screen-breadcrumb a:hover, .screen-breadcrumb a:focus-visible { color: var(--gold); }
+.screen-collection-header { max-width: 780px; margin-bottom: 48px; }
+.screen-collection-header .eyebrow { margin-bottom: 14px; }.screen-collection-header h1 { margin-bottom: 18px; font-size: clamp(44px, 5.4vw, 76px); line-height: 1.04; letter-spacing: -2px; }.screen-collection-header p { color: var(--muted); font-size: 18px; line-height: 1.75; }
+.screen-collection-gallery { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.screen-collection-gallery figure { aspect-ratio: 4 / 3; overflow: hidden; background: #fff; }.screen-collection-gallery img { width: 100%; height: 100%; object-fit: contain; }
+.screen-collection-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 48px; }.screen-collection-actions .btn { display: inline-flex; min-width: 160px; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 0; }
+@media (max-width: 1000px) { .screen-category-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }.screen-collection-main { padding-top: 125px; } }
+@media (max-width: 620px) { .screen-category-cards { grid-template-columns: 1fr; }.screen-category-card__content { padding: 18px; }.screen-collection-main { padding: 105px 6% 65px; }.screen-breadcrumb { margin-bottom: 26px; }.screen-collection-header { margin-bottom: 34px; }.screen-collection-header p { font-size: 16px; }.screen-collection-gallery { gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }.screen-collection-actions { margin-top: 34px; } }
