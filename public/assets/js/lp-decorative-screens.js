@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+const initialiseScreenRfq = () => {
   const form = document.querySelector("#screen-rfq-form");
   if (!form) return;
 
@@ -32,7 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
-      if (!response.ok) throw new Error("RFQ submission failed.");
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.success !== true) throw new Error("RFQ submission failed.");
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "rfq_submit" });
       form.reset();
       status.textContent = "Your request has been submitted. We normally reply within 24 hours.";
     } catch {
@@ -42,4 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
       submit.textContent = defaultLabel;
     }
   });
-});
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initialiseScreenRfq, { once: true });
+} else {
+  initialiseScreenRfq();
+}
