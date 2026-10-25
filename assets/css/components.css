@@ -27,12 +27,13 @@ footer { padding: 58px 3% 30px; background: #0d0b0a; color: #aaa; } footer > a, 
 @media (max-width: 769px) { .mobile-nav:not([hidden]) { display: block; } }
 
 /* Native, link-based language selector; untranslated routes are never linked. */
-.language-switcher { position: relative; flex: 0 0 auto; color: #fff; font-size: 13px; }
-.language-switcher summary { display: flex; min-height: 44px; align-items: center; gap: 6px; padding: 0 4px; color: #fff; cursor: pointer; list-style: none; }
+.language-switcher { position: relative; flex: 0 0 auto; color: var(--gold-light); font-size: 13px; }
+.language-switcher summary { box-sizing: border-box; display: flex; min-height: 44px; align-items: center; justify-content: center; gap: 6px; padding: 0 11px; border: 1px solid var(--gold-light); border-radius: 7px; background: transparent; color: var(--gold-light); cursor: pointer; list-style: none; white-space: nowrap; transition: background-color .18s ease, color .18s ease; }
 .language-switcher summary::-webkit-details-marker { display: none; }
-.language-switcher summary::after { content: "⌄"; color: var(--gold-light); }
-.language-switcher__globe { display: inline-block; width: 16px; height: 16px; flex: 0 0 16px; background: url("/assets/icons/globe.svg") center / contain no-repeat; }
-.language-switcher summary:focus-visible, .language-switcher a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+.language-switcher summary::after { content: "⌄"; color: currentColor; }
+.language-switcher__globe { display: inline-block; width: 16px; height: 16px; flex: 0 0 16px; background: currentColor; -webkit-mask: url("/assets/icons/globe.svg") center / contain no-repeat; mask: url("/assets/icons/globe.svg") center / contain no-repeat; }
+.language-switcher summary:hover { background: var(--gold-light); color: var(--ink); }
+.language-switcher summary:focus-visible, .language-switcher a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .language-switcher__options { position: absolute; z-index: 60; top: 100%; right: 0; min-width: 190px; padding: 6px; border: 1px solid rgba(255,255,255,.18); background: #171311; box-shadow: 0 12px 28px rgba(0,0,0,.25); }
 .language-switcher__options a, .language-switcher__options span { display: block; padding: 10px 12px; color: #fff; line-height: 1.4; white-space: nowrap; }
 .language-switcher__options [aria-current="page"] { color: var(--gold-light); }

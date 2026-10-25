@@ -172,9 +172,8 @@ function makeArabic(html, { en, ar, source }) {
   html = html.replaceAll('href="/products/#', 'href="/ar/products/#');
   html = html.replaceAll('href="/"', 'href="/ar/"');
   html = html.replaceAll('href="/privacy/"', 'href="/ar/privacy/"');
-  html = html.replaceAll('aria-label="Choose language, current language English"', 'aria-label="اختر اللغة، اللغة الحالية العربية"');
+  html = html.replaceAll('aria-label="Choose language, current language English; switch to Arabic"', 'aria-label="اختر اللغة، اللغة الحالية العربية، التبديل إلى الإنجليزية"');
   html = html.replaceAll('<span aria-current="page">English</span><a href="' + ar + '" lang="ar" hreflang="ar">العربية</a>', `<a href="${en}" lang="en" hreflang="en">English</a><span aria-current="page" lang="ar">العربية</span>`);
-  html = html.replaceAll('</span> EN</summary>', '</span> AR</summary>');
   html = html.replaceAll('aria-label="Primary navigation"', 'aria-label="التنقل الرئيسي"').replaceAll('aria-label="Mobile navigation"', 'aria-label="التنقل للجوال"').replaceAll('aria-label="Language"', 'aria-label="اللغة"');
   html = html.replaceAll('aria-label="Factory Workflow"', 'aria-label="مراحل التصنيع"').replaceAll('aria-label="Manufacturing Capability"', 'aria-label="قدرات التصنيع"').replaceAll('aria-label="Contact Information and RFQ Form"', 'aria-label="معلومات التواصل ونموذج طلب عرض السعر"');
   html = html.replaceAll('aria-label="STEELLCX Home"', 'aria-label="الصفحة الرئيسية لـ STEELLCX"').replaceAll('aria-label="Contact STEELLCX on WhatsApp"', 'aria-label="التواصل مع STEELLCX عبر واتساب"');
@@ -199,6 +198,7 @@ function makeArabic(html, { en, ar, source }) {
     return whole.replace(`alt="${alt}"`, `alt="${translated}"`);
   });
   html = translateText(html, source);
+  html = html.replaceAll('<span lang="ar" dir="rtl">العربية</span></summary>', '<span lang="en" dir="ltr">English</span></summary>');
   if (en === '/contact/') html = html.replace('src="/assets/js/contact.js"', 'src="/assets/js/contact.js"');
   return html;
 }
