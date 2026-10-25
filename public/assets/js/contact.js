@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = form.querySelector('button[type="submit"]');
   const status = document.querySelector("#form-status");
   const defaultButtonText = submitButton?.textContent;
-  const messages = {
+  const isArabic = document.documentElement.lang === "ar";
+  const messages = isArabic ? {
+    name: "يرجى إدخال اسمك.",
+    email: "يرجى إدخال بريد إلكتروني صحيح.",
+    country: "يرجى إدخال بلدك أو منطقتك.",
+    message: "يرجى إدخال تفاصيل مشروعك."
+  } : {
     name: "Please enter your name.",
     email: "Please enter a valid email address.",
     country: "Please enter your country or region.",
@@ -28,17 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const setSubmitting = (isSubmitting) => {
     if (!submitButton) return;
     submitButton.disabled = isSubmitting;
-    submitButton.textContent = isSubmitting ? "Submitting..." : defaultButtonText;
+    submitButton.textContent = isSubmitting ? (isArabic ? "جارٍ الإرسال..." : "Submitting...") : defaultButtonText;
   };
 
   requiredFields.forEach((field) => field.addEventListener("blur", () => validate(field)));
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (submitButton?.disabled) return;
     const valid = requiredFields.map(validate).every(Boolean);
     if (!valid) {
       const firstInvalid = requiredFields.find((field) => field.getAttribute("aria-invalid") === "true");
       firstInvalid?.focus();
-      if (status) status.textContent = "Please complete all required fields.";
+      if (status) status.textContent = isArabic ? "يرجى إكمال جميع الحقول المطلوبة." : "Please complete all required fields.";
       return;
     }
 
@@ -63,13 +70,18 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(payload)
       });
 
-      if (!response.ok) throw new Error("RFQ submission failed.");
+      const result = await response.json().catch(() => null);
+      if (!response.ok || result?.success !== true) throw new Error("RFQ submission failed.");
 
+      if (window.steellcxConsent?.allowed()) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "rfq_submit", site_language: isArabic ? "ar" : "en" });
+      }
       form.reset();
       requiredFields.forEach((field) => setError(field));
-      if (status) status.textContent = "Your request has been submitted. We normally reply within 24 hours.";
+      if (status) status.textContent = isArabic ? "تم إرسال طلبك بنجاح. نرد عادةً خلال 24 ساعة." : "Your request has been submitted. We normally reply within 24 hours.";
     } catch {
-      if (status) status.textContent = "Submission failed. Please try again later or contact us via WhatsApp.";
+      if (status) status.textContent = isArabic ? "تعذر إرسال الطلب. حاول مجدداً لاحقاً أو تواصل معنا عبر واتساب." : "Submission failed. Please try again later or contact us via WhatsApp.";
     } finally {
       setSubmitting(false);
     }

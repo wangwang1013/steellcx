@@ -26,6 +26,27 @@ footer { padding: 58px 3% 30px; background: #0d0b0a; color: #aaa; } footer > a, 
 @media (max-width: 620px) { .mobile-nav { padding: 20px 20px 24px; } .mobile-nav > a { min-height: 46px; } }
 @media (max-width: 769px) { .mobile-nav:not([hidden]) { display: block; } }
 
+/* Native, link-based language selector; untranslated routes are never linked. */
+.language-switcher { position: relative; flex: 0 0 auto; color: #fff; font-size: 13px; }
+.language-switcher summary { display: flex; min-height: 44px; align-items: center; gap: 6px; padding: 0 4px; color: #fff; cursor: pointer; list-style: none; }
+.language-switcher summary::-webkit-details-marker { display: none; }
+.language-switcher summary::after { content: "⌄"; color: var(--gold-light); }
+.language-switcher__globe { display: inline-block; width: 16px; height: 16px; flex: 0 0 16px; background: url("/assets/icons/globe.svg") center / contain no-repeat; }
+.language-switcher summary:focus-visible, .language-switcher a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+.language-switcher__options { position: absolute; z-index: 60; top: 100%; right: 0; min-width: 190px; padding: 6px; border: 1px solid rgba(255,255,255,.18); background: #171311; box-shadow: 0 12px 28px rgba(0,0,0,.25); }
+.language-switcher__options a, .language-switcher__options span { display: block; padding: 10px 12px; color: #fff; line-height: 1.4; white-space: nowrap; }
+.language-switcher__options [aria-current="page"] { color: var(--gold-light); }
+.language-switcher__options [aria-disabled="true"] { color: #c7beb7; cursor: default; }
+.language-switcher__options a:hover { color: var(--gold-light); }
+.mobile-language { display: none; }
+.site-header > .language-switcher, .about-header > .language-switcher, .contact-header > .language-switcher { display: none; }
+@media (max-width: 769px) {
+  .desktop-nav .language-switcher, .about-nav .language-switcher, .contact-nav .language-switcher { display: none; }
+  .mobile-language { display: block; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.1); }
+  .mobile-language .language-switcher__options { position: static; min-width: 0; border: 0; box-shadow: none; }
+  .mobile-language summary, .mobile-language .language-switcher__options a, .mobile-language .language-switcher__options span { min-height: 44px; }
+}
+
 /* Compact floating WhatsApp action: isolated from generic button sizing. */
 .floating-whatsapp-cta { position: fixed; z-index: 40; right: 24px; bottom: 24px; box-sizing: border-box; display: inline-flex; width: 142px; min-width: 142px; max-width: 142px; height: 52px; min-height: 52px; max-height: 52px; align-items: center; justify-content: center; gap: 9px; padding: 0 16px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 999px; background: #25d366; box-shadow: 0 10px 22px rgba(15, 11, 9, .2); color: #fff; font-size: 14px; font-weight: 700; line-height: 1; white-space: nowrap; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
 .floating-whatsapp-cta:hover { background: #1fbd59; box-shadow: 0 12px 24px rgba(15, 11, 9, .25); transform: translateY(-1px); }

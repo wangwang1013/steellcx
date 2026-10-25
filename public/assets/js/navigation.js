@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector(".mobile-menu-toggle");
   const menu = document.querySelector(".mobile-nav");
+  const isArabic = document.documentElement.lang === "ar";
 
   if (!button || !menu) return;
 
   const setMenuState = (isOpen) => {
     button.setAttribute("aria-expanded", String(isOpen));
-    button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    button.setAttribute("aria-label", isOpen ? (isArabic ? "إغلاق قائمة التنقل" : "Close navigation menu") : (isArabic ? "فتح قائمة التنقل" : "Open navigation menu"));
     menu.hidden = !isOpen;
     document.body.classList.toggle("mobile-menu-open", isOpen);
   };

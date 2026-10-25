@@ -1,0 +1,32 @@
+.screen-lp--ar { font-family: Tahoma, "Noto Sans Arabic", Arial, sans-serif; text-align: start; }
+.screen-lp--ar .screen-lp__brand { left: auto; right: clamp(24px, 5vw, 72px); letter-spacing: 8px; }
+.screen-lp--ar .screen-lp__language { position: absolute; z-index: 3; top: 25px; right: auto; left: clamp(24px, 5vw, 72px); }
+.screen-lp--ar .screen-lp__language .language-switcher__options { right: auto; left: 0; }
+.screen-lp--ar .screen-lp__hero { background-image: linear-gradient(270deg, rgba(18, 13, 10, .91), rgba(18, 13, 10, .5)), url("/assets/images/products/hero-products-screens.webp"); }
+.screen-lp--ar .screen-lp__eyebrow { letter-spacing: 0; text-transform: none; }
+.screen-lp--ar .screen-lp__hero h1, .screen-lp--ar h2 { letter-spacing: 0; line-height: 1.3; }
+.screen-lp--ar .screen-lp__value-points span { border-left: 0; border-inline-start: 2px solid var(--gold); }
+.screen-lp--ar .screen-lp__finish-group li { padding-left: 0; padding-inline-start: 14px; }
+.screen-lp--ar .screen-lp__finish-group li::before { margin: 0 -14px 2px 9px; }
+.screen-lp--ar .screen-lp__english-note { display: block; margin-top: 7px; color: #746c64; font-size: 12px; }
+.screen-lp--ar .screen-lp__workflow img {
+  width: calc(100% + 44px);
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  background: #211c19;
+}
+.screen-lp--ar .screen-lp__workflow article:nth-child(2) img { object-position: center 42%; }
+.screen-lp--ar .screen-lp__workflow article:nth-child(3) img { object-position: center 48%; }
+.screen-lp--ar .screen-lp__workflow article:nth-child(5) img { object-position: center 27%; }
+.screen-lp--ar .screen-lp__workflow article:nth-child(6) img { object-fit: contain; }
+.screen-lp--ar .screen-lp__workflow article:nth-child(7) img { object-position: center 52%; }
+.screen-lp--ar .screen-lp__workflow article:nth-child(8) img { object-position: center 47%; }
+.screen-lp--ar bdi, .screen-lp--ar a[dir="ltr"], .screen-lp--ar input[dir="ltr"] { direction: ltr; unicode-bidi: isolate; }
+.screen-lp--ar a[dir="ltr"] { display: inline-block; }
+@media (max-width: 620px) {
+  .screen-lp--ar .screen-lp__brand { left: auto; right: 22px; }
+  .screen-lp--ar .screen-lp__language { top: 19px; left: 22px; }
+  .screen-lp--ar .screen-lp__hero h1 { font-size: clamp(36px, 10vw, 54px); }
+}

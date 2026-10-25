@@ -34,8 +34,10 @@ const initialiseScreenRfq = () => {
       });
       const result = await response.json().catch(() => null);
       if (!response.ok || result?.success !== true) throw new Error("RFQ submission failed.");
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "rfq_submit" });
+      if (window.steellcxConsent?.allowed()) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "rfq_submit", site_language: "en" });
+      }
       form.reset();
       status.textContent = "Your request has been submitted. We normally reply within 24 hours.";
     } catch {
