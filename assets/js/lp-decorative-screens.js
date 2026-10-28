@@ -49,8 +49,36 @@ const initialiseScreenRfq = () => {
   });
 };
 
+const initialiseMobileWhatsAppVisibility = () => {
+  const floating = document.querySelector(".screen-lp .floating-whatsapp-cta");
+  const mobile = window.matchMedia("(max-width: 768px)");
+  const targets = [
+    document.querySelector(".screen-lp__actions"),
+    document.querySelector("#screen-rfq-form")
+  ].filter(Boolean);
+  if (!floating || !targets.length) return;
+
+  const update = () => {
+    const obscured = mobile.matches && targets.some((target) => {
+      const rect = target.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    });
+    floating.classList.toggle("is-obscured", obscured);
+    floating.inert = obscured;
+  };
+
+  const observer = new IntersectionObserver(update);
+  targets.forEach((target) => observer.observe(target));
+  mobile.addEventListener("change", update);
+  update();
+};
+
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initialiseScreenRfq, { once: true });
+  document.addEventListener("DOMContentLoaded", () => {
+    initialiseScreenRfq();
+    initialiseMobileWhatsAppVisibility();
+  }, { once: true });
 } else {
   initialiseScreenRfq();
+  initialiseMobileWhatsAppVisibility();
 }
